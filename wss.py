@@ -1,3 +1,5 @@
+#!/usr/bin/python3.6
+
 import hashlib
 import os
 import sys
@@ -82,8 +84,8 @@ def download(url):
         r = s.post(
             url = 'https://www.wenshushu.cn/ap/dl/sign',
             json = {
-                'bid': bid,
-                'fid': fid
+                'ufileid': fid,
+                'consumeCode': 0
             }
         )
         url = r.json()['data']['url']
