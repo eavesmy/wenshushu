@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+# cython: language_level=3
 
 import hashlib
 import os
@@ -20,6 +20,10 @@ def login_anonymous():
     return r.json()['data']['token']
 
 def download(url):
+
+    s = requests.session()
+    s.headers['x-token'] = login_anonymous()
+
     def get_tid(token):
         r = s.post(
             url = 'https://www.wenshushu.cn/ap/task/token',
@@ -100,6 +104,10 @@ def download(url):
     list_file(tid)
 
 def upload(filePath):
+
+    s = requests.session()
+    s.headers['x-token'] = login_anonymous()
+
     file_size = os.path.getsize(filePath)
     ispart = True if file_size > 2097152 else False
 
@@ -248,6 +256,7 @@ def upload(filePath):
                 json = payload
             )
             rsp = r.json()
+            print(rsp)
             can_fast = rsp["data"]["status"]
             ufile = rsp['data']['ufile']
             if can_fast and not ufile:

